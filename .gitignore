@@ -1,0 +1,23 @@
+# ===== Unreal Engine generated / build artifacts =====
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+
+# ===== IDE & Editor =====
+.vs/
+.idea/
+*.sln
+*.suo
+*.VC.db
+*.VC.opendb
+.vscode/
+
+# ===== OS junk =====
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ===== UE project-local settings (keep out of repo) =====
+*.saved
+*.log
