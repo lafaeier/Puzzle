@@ -1,7 +1,6 @@
 # ===== Unreal Engine binary assets → Git LFS =====
 *.uasset filter=lfs diff=lfs merge=lfs -text
 *.umap   filter=lfs diff=lfs merge=lfs -text
-
 # ===== Imported source assets → Git LFS =====
 *.fbx filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
@@ -13,7 +12,6 @@
 *.ogg filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 *.mov filter=lfs diff=lfs merge=lfs -text
-
 # ===== Other large files =====
 *.pak filter=lfs diff=lfs merge=lfs -text
 *.utoc filter=lfs diff=lfs merge=lfs -text
