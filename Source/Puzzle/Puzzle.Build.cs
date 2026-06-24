@@ -26,6 +26,9 @@ public class Puzzle : ModuleRules
 		PublicIncludePaths.AddRange(new string[] {
 			"Puzzle",
 			"Puzzle/Core",
+			"Puzzle/Interaction",
+			"Puzzle/Inventory",
+			"Puzzle/Character",
 			"Puzzle/Variant_Horror",
 			"Puzzle/Variant_Horror/UI",
 			"Puzzle/Variant_Shooter",

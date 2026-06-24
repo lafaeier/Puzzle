@@ -1,7 +1,7 @@
 #include "RoomGameModeBase.h"
+#include "Character/RoomHUD.h"
 
 ARoomGameModeBase::ARoomGameModeBase()
 {
-	// DefaultPawnClass, PlayerControllerClass, etc. are set in Blueprint subclasses
-	// or overridden in Project Settings. This C++ class provides the base type only.
+	HUDClass = ARoomHUD::StaticClass();
 }
