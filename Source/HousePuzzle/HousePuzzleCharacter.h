@@ -1,0 +1,75 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/Character.h"
+#include "Logging/LogMacros.h"
+#include "HousePuzzleCharacter.generated.h"
+
+class UInputComponent;
+class USkeletalMeshComponent;
+class UCameraComponent;
+class UInputAction;
+class UInteractionComponent;
+struct FInputActionValue;
+
+DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
+
+UCLASS()
+class HOUSEPUZZLE_API AHousePuzzleCharacter : public ACharacter
+{
+	GENERATED_BODY()
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
+	USkeletalMeshComponent* FirstPersonMesh;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
+	UCameraComponent* FirstPersonCameraComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
+	UInteractionComponent* InteractionComp;
+
+protected:
+	UPROPERTY(EditAnywhere, Category ="Input")
+	UInputAction* JumpAction;
+
+	UPROPERTY(EditAnywhere, Category ="Input")
+	UInputAction* MoveAction;
+
+	UPROPERTY(EditAnywhere, Category ="Input")
+	class UInputAction* LookAction;
+
+	UPROPERTY(EditAnywhere, Category ="Input")
+	class UInputAction* MouseLookAction;
+
+	UPROPERTY(EditAnywhere, Category ="Input")
+	UInputAction* InteractAction;
+
+public:
+	AHousePuzzleCharacter();
+
+protected:
+	void MoveInput(const FInputActionValue& Value);
+	void LookInput(const FInputActionValue& Value);
+	void InteractInput(const FInputActionValue& Value);
+
+	UFUNCTION(BlueprintCallable, Category="Input")
+	virtual void DoAim(float Yaw, float Pitch);
+
+	UFUNCTION(BlueprintCallable, Category="Input")
+	virtual void DoMove(float Right, float Forward);
+
+	UFUNCTION(BlueprintCallable, Category="Input")
+	virtual void DoJumpStart();
+
+	UFUNCTION(BlueprintCallable, Category="Input")
+	virtual void DoJumpEnd();
+
+	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
+
+public:
+	USkeletalMeshComponent* GetFirstPersonMesh() const { return FirstPersonMesh; }
+	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
+	UInteractionComponent* GetInteractionComponent() const { return InteractionComp; }
+};

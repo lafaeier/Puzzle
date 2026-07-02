@@ -1,0 +1,19 @@
+# Unreal Engine 自动生成目录
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+Build/
+
+# Visual Studio
+.vs/
+*.sln
+*.suo
+*.user
+*.userosscache
+*.opensdf
+*.sdf
+
+# OS
+Thumbs.db
+Desktop.ini
